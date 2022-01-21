@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+.wrapper {
+	width: 500px;
+	margin: 0 auto;
+    margin-top: 2%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5%; 
+    
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+p {
+    text-align: center;
+}
+
+.text-muted{
+    font-size: 12px;
+}
+
+.card {
+    /* background-color: #ffffff; */
+    /* width: 30%; */
+    /* margin: 3% auto;  */
+    /* float: none;  */
+    margin-bottom: 10px; 
+    
+}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+  
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+  
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+  
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+span{
+    position: absolute;
+    margin-left: -30px;
+    right: 15px;
+    transform: translate(0, 50%);
+    top: -50%;
+    cursor: pointer;
+}
+
+.btn {
+    width: 150px;
+    background-color: #2fa4c2;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+  
+.btn:hover {
+    background-color: #374555;
+    color: white;
+}
+
+.direct p{
+    font-size: 14px;
+}
+
+footer{
+    text-align: center;
+    display: inline;
+    position: relative;
+    bottom:0;
+}
+
+/*resposive*/
+@media (max-width:600px) {
+    
+    .wrapper {
+		width: 100%;
+        margin:auto;
+	}
+
+    form {
+        padding: 0 1.5rem;
+    }
+
+    .card{
+        width: 80%;
+        margin: 3% auto; 
+        float: none; 
+    }
+
+}
