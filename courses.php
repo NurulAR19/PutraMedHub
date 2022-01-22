@@ -38,9 +38,12 @@ if(isset($_GET['id']))
                     {
                         $key_child = $_GET['id'];
                         $ref_table = 'Course';
-                        
+                        // $TeachingMaterials ='TeachingMaterials';
+                        // $notes = 'Notes';
+                        // $file ='key';
                         
                         $getdata = $database->getReference($ref_table)->getChild($key_child)->getValue();
+                        // $getMetadata = $database->getReference($ref_table)->getChild($key_child)->getChild($TeachingMaterials)->getChild($notes)->getValue();
 
                         if($getdata > 0)
                         {
@@ -159,7 +162,7 @@ if(isset($_GET['id']))
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
         
-    <script id="MainScript" src="courses.js"></script>
+    <script id="MainScript" src="js/courses.js"></script>
     <script src="js/up.js" type="text/javascript"></script>
 <?php
 include('includes/footer.php');
