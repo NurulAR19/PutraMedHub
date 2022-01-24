@@ -57,7 +57,7 @@ include('includes/navbar-3.php');
                         </div>
                         <div class="card-text">
                             <!-- <a href="course.php?id=<?=$key?>"class="btn btn-outline-secondary btn-sm stretched-link float-end  position-absolute bottom-0 end-0 mb-5 me-2">View</a> -->
-                            <a href="courses copy.php?id=<?=$key?>"class="stretched-link "></a>
+                            <a href="courses.php?id=<?=$key?>"class="stretched-link "></a>
                         </div>
                     </div>
                     
