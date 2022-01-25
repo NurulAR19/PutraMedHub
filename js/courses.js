@@ -184,7 +184,7 @@ function AddItemsToTableAR(Name, Link){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Notes/' + Name.value);
+    const storageRef = firebase.storage().ref('Notes/' + ModCourseCode.value + '/' + Name.value);
     storageRef.delete().then(()=>{
         alert("File " + Name.value + " successfully deleted");
         
@@ -204,7 +204,7 @@ function removeVideo(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Video/' + Name.value);
+    const storageRef = firebase.storage().ref('Video/' + ModCourseCode.value + '/' + Name.value);
     storageRef.delete().then(()=>{
         alert("Video " + Name.value + " successfully deleted");
         
@@ -224,7 +224,7 @@ function removeAR(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('AssetBundle/' + Name.value);
+    const storageRef = firebase.storage().ref('AssetBundle/' + ModCourseCode.value + '/' + Name.value);
     storageRef.delete().then(()=>{
         alert("AR Model " + Name.value + " successfully deleted");
         
