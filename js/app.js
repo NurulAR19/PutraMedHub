@@ -1,4 +1,4 @@
-    // ----------Import Configuration---------------//
+        // ----------Import Configuration---------------//
        var firebaseConfig = {
             apiKey: "AIzaSyCnUzaGSSNBlhiIMrM3VreZkyCYd3WCNf8",
             authDomain: "putramedhub.firebaseapp.com",
@@ -68,7 +68,7 @@
             td2.innerHTML = courseName;
             td3.innerHTML = createdBy;
             td4.innerHTML = updatedBy;
-            
+
             td1.classList +="courseCodeField";
             td2.classList +="courseNameField";
             td3.classList +="LecturerField";
@@ -163,7 +163,7 @@
             var FileName = document.getElementById('file_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('Notes/'+ FileName);
+            var storageRef = firebase.storage().ref('Notes/'+ ModCourseCode.value + '/' + FileName);
 
             // Upload file
             var task = storageRef.put(file);
@@ -221,7 +221,7 @@
             var VidName = document.getElementById('vid_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('Video/'+ VidName);
+            var storageRef = firebase.storage().ref('Video/' + ModCourseCode.value +'/'+ VidName);
 
             // Upload file
             var task = storageRef.put(file);
@@ -279,7 +279,7 @@
             var ARName = document.getElementById('ar_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('AssetBundle/'+ file.name);
+            var storageRef = firebase.storage().ref('AssetBundle/'+ ModCourseCode.value +'/'+ file.name);
 
             // Upload file
             var task = storageRef.put(file);
@@ -411,5 +411,7 @@
        
 
 
+
+       
 
        
