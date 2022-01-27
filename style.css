@@ -6,6 +6,17 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+model-viewer{
+        width:300px;
+        height: 600px;
+        /* margin: 0 auto; */
+        position: absolute;
+        right: 0;
+        margin-top: 8%;
+        margin-right: 3%;
+        animation: elongate 2s infinite ease-in-out alternate; 
+}
+
 .banner-image {
 	background-image: url('img/pmh2.png');
 	background-size: cover;
