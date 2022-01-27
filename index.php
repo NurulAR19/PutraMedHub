@@ -28,22 +28,14 @@ session_start();
    
 
      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+     <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
      
      <title>Putra Med-hub</title> 
      <link rel="icon" href="img/favicon.png" type="icon" sizes="16x16">
 </head>
 <style>
-    model-viewer{
-        width:300px;
-        height: 600px;
-        /* margin: 0 auto; */
-        position: absolute;
-        right: 0;
-        margin-top: 8%;
-        margin-right: 3%;
-        animation: elongate 2s infinite ease-in-out alternate;
-        
-    }
+    
 </style>
 
 <body>
