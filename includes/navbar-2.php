@@ -52,6 +52,7 @@
             <!-- <li><a class="dropdown-item" href="user-acc.php">User Profile</a></li> -->
             <li><a class="dropdown-item" href="profile-user.php">My Profile</a></li>
             <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1y9NUg7qvRF5t50ZnGLSVlyyZicDgY3FL?usp=sharing" target="_blank">Get App</a></li>
+            <li><a class="dropdown-item" href="3dmodelviewer.html">3D Model Viewer</a></li>
             <li><a class="dropdown-item" href="sign-out.php">Sign Out</a></li>
           </ul>
         </div>
