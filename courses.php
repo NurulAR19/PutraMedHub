@@ -9,7 +9,7 @@ include('dbcon.php');
 <head>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <link rel="stylesheet" href="css/course.css">
-    <head><title>Course: <?=$key_child;?>-&nbsp;<?=$getdata['CourseName'];?></title></head>
+    <head><title>Course</title></head>
 </head>
 
 <br>
