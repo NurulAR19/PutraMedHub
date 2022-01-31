@@ -62,8 +62,8 @@ include('includes/navbar-2.php');
     <div class="card">
         <div class="card-header">
             <h4>Courses List
-            <a href="add-course.php" class="btn btn-primary float-end disabled" title="Add Course" >
-            <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Course</a>
+<!--             <a href="add-course.php" class="btn btn-primary float-end disabled" title="Add Course" >
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Course</a> -->
             </button>
             </h4>
         </div>
