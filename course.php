@@ -39,11 +39,8 @@ if(isset($_GET['id']))
                         $key_child = $_GET['id'];
                         $ref_table = 'Course';
                         $TeachingMaterials ='TeachingMaterials';
-                        $notes = 'Notes';
-                        $file ='key';
-                        
+                      
                         $getdata = $database->getReference($ref_table)->getChild($key_child)->getValue();
-                        $getMetadata = $database->getReference($ref_table)->getChild($key_child)->getChild($TeachingMaterials)->getChild($notes)->getValue();
 
                         if($getdata > 0)
                         {
