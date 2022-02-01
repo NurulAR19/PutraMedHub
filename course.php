@@ -129,11 +129,11 @@ if(isset($_GET['id']))
                             <button onclick="topFunction()" id="myBtn" class="btn btn-lg rounded-circle" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
                             
                             <!-- Modal Edit Note -->
-                            <div class="modal fade" id="EditNoteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade" id="EditNoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-s modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel" style="font-weight: bold;">Update Lecture Notes Name</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel" style="font-weight: bold;">Update File Name</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -141,64 +141,19 @@ if(isset($_GET['id']))
                                     <div class="col-md-12 ">
                                         <div class="form-group mb-3">
                                             <label for="">File Name</label>  
-                                            <input type="text"  id="NoteNameMod" class="form-control">
+                                            <input type="text"  id="NameMod" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button id="UpdNoteBtn" class="btn btn-success" onclick="updateNotes()">Update</button>
+                                    <button id="UpdNoteBtn" class="btn btn-success" onclick="updateNotes()">Update Lecture Notes</button>
+                                    <button id="UpdVideoBtn" class="btn btn-success" onclick="updateVid()">Update Video Recordings</button>
+                                    <button id="UpdARBtn" class="btn btn-success" onclick="updateAR()">Update 3D Model</button>
                                 </div>
                             </div>
                             </div>
 
-                            <!-- Modal Edit Video -->
-                            <div class="modal fade" id="EditVideoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-s modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel" style="font-weight: bold;">Update Video Recordings Name</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12 ">
-                                        <div class="form-group mb-3">
-                                            <label for="">File Name</label>  
-                                            <input type="text"  id="VidNameMod" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="UpdVidBtn" class="btn btn-success" onclick="updateVid()">Update</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                            <!-- Modal Edit AR -->
-                            <div class="modal fade" id="EditARModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-s modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel" style="font-weight: bold;">Update AR Materials Name</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12 ">
-                                        <div class="form-group mb-3">
-                                            <label for="">File Name</label>  
-                                            <input type="text"  id="ARNameMod" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="UpdARBtn" class="btn btn-success" onclick="updateAR()">Update</button>
-                                </div>
-                            </div>
-                            </div>
 
                         <?php
                             
