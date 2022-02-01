@@ -1,16 +1,23 @@
 <?php
 include('authentication.php');
 include('includes/header.php');
-include('includes/navbar-3.php');
+include('includes/navbar-2.php');
 include('dbcon.php');
 
+if(isset($_GET['id']))
+{
+    $key_child = $_GET['id'];
+    $ref_table = 'Course';
+    $getdata = $database->getReference($ref_table)->getChild($key_child)->getValue();
+}
 ?>
 
 <head>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <link rel="stylesheet" href="css/course.css">
-    <head><title>Course</title></head>
+    <link rel="stylesheet" href="css/courses.css">
+    <head><title>Course: <?=$key_child;?>-&nbsp;<?=$getdata['CourseName'];?></title></head>
 </head>
+
 
 <br>
 
@@ -32,13 +39,7 @@ include('dbcon.php');
                     {
                         $key_child = $_GET['id'];
                         $ref_table = 'Course';
-                        // $TeachingMaterials ='TeachingMaterials';
-                        // $notes = 'Notes';
-                        // $file ='key';
-                        
                         $getdata = $database->getReference($ref_table)->getChild($key_child)->getValue();
-                        // $getMetadata = $database->getReference($ref_table)->getChild($key_child)->getChild($TeachingMaterials)->getChild($notes)->getValue();
-
                         if($getdata > 0)
                         {
                 ?>
