@@ -123,7 +123,7 @@ function AddItemsToTableVideos(Name, Link){
 
     var ActionDiv = document.createElement('td');
     ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeVideo()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
-    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditVideoModal" onclick="FillVidboxes('+VideosNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillVidboxes('+VideosNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
 
     trow.appendChild(ActionDiv).style.textAlign = 'center';
@@ -185,7 +185,7 @@ function AddItemsToTableAR(Name, Link){
 
     var ActionDiv = document.createElement('td');
     ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeAR()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
-    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditARModal" onclick="FillARboxes('+ARNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillARboxes('+ARNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
     trow.appendChild(ActionDiv).style.textAlign = 'center';
     tbody.appendChild(trow);
@@ -194,8 +194,10 @@ function AddItemsToTableAR(Name, Link){
 }
 
 //-------Update Note Model from Database---------//
-var ModNoteFileName = document.getElementById('NoteNameMod');
-var BtnModUpd = document.getElementById('UpdNoteBtn');
+var ModNoteFileName = document.getElementById('NameMod');
+var BtnModUpd1 = document.getElementById('UpdNoteBtn');
+var BtnModUpd2 = document.getElementById('UpdVideoBtn');
+var BtnModUpd3 = document.getElementById('UpdArBtn');
 
 function FillNoteboxes(index){
     if(index==null){
@@ -205,7 +207,9 @@ function FillNoteboxes(index){
     else{
         --index;
         ModNoteFileName.value = LectureNotesList[index][0];
-        BtnModUpd.style.display='inline-block';
+        BtnModUpd1.style.display='inline-block';
+        BtnModUpd2.style.display='none';
+        BtnModUpd3.style.display='none';
 
     }
 }
@@ -225,7 +229,7 @@ function updateNotes(){
             else{
                 alert( Name.value + " successfully updated");
                 SelectAllLectureNotes();
-                $("staticBackdrop").modal('hide');
+                
             }
         }
     )
@@ -233,8 +237,8 @@ function updateNotes(){
 
 
 //-------Update Video Model from Database---------//
-var ModVidFileName = document.getElementById('VidNameMod');
-var BtnModUpd = document.getElementById('UpdVidBtn');
+var ModVidFileName = document.getElementById('NameMod');
+var BtnModUpd2 = document.getElementById('UpdVideoBtn');
 
 function FillVidboxes(index){
     if(index==null){
@@ -244,7 +248,9 @@ function FillVidboxes(index){
     else{
         --index;
         ModVidFileName.value = VideoList[index][0];
-        BtnModUpd.style.display='inline-block';
+        BtnModUpd2.style.display='inline-block';
+        BtnModUpd1.style.display='none';
+        BtnModUpd3.style.display='none';
 
     }
 }
@@ -264,15 +270,15 @@ function updateVid(){
             else{
                 alert( Name.value + " successfully updated");
                 SelectAllVideos();
-                $("staticBackdrop").modal('hide');
+               
             }
         }
     )
 }
 
 //-------Update AR Model from Database---------//
-var ModARFileName = document.getElementById('ARNameMod');
-var BtnModUpd = document.getElementById('UpdARBtn');
+var ModARFileName = document.getElementById('NameMod');
+var BtnModUpd3 = document.getElementById('UpdARBtn');
 
 function FillARboxes(index){
     if(index==null){
@@ -282,7 +288,9 @@ function FillARboxes(index){
     else{
         --index;
         ModARFileName.value = ARList[index][0];
-        BtnModUpd.style.display='inline-block';
+        BtnModUpd3.style.display='inline-block';
+        BtnModUpd1.style.display='none';
+        BtnModUpd2.style.display='none';
 
     }
 }
@@ -302,7 +310,7 @@ function updateAR(){
             else{
                 alert( Name.value + " successfully updated");
                 SelectAllAR();
-                $("staticBackdrop").modal('hide');
+                
             }
         }
     )
