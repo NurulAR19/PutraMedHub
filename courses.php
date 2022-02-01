@@ -1,7 +1,7 @@
 <?php
 include('authentication.php');
 include('includes/header.php');
-include('includes/navbar-2.php');
+include('includes/navbar-3.php');
 include('dbcon.php');
 
 if(isset($_GET['id']))
