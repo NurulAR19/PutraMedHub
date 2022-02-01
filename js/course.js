@@ -62,11 +62,12 @@ function AddItemsToTableLectureNotes(Name, Link){
     trow.appendChild(td1);
     trow.appendChild(td2);
     
-    var RemoveDiv = document.createElement('td');
-    RemoveDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeFile()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    var ActionDiv = document.createElement('td');
+    ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeFile()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillNoteboxes('+LectureNotesNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
 
-    trow.appendChild(RemoveDiv).style.textAlign = 'center';
+    trow.appendChild(ActionDiv).style.textAlign = 'center';
     tbody.appendChild(trow);
     
 
@@ -110,7 +111,7 @@ function AddItemsToTableVideos(Name, Link){
     VideoList.push([Name, Link])
 
     td0.innerHTML = ++VideosNo;
-    td1.innerHTML = '<input type="hidden" id="VideoName" value="'+Name+'"><li>'+Name+'</li><br><video id="video" width="640" height="360" controls><source src="'+Link+'" type="video/mp4"></video><br>';
+    td1.innerHTML = '<input type="hidden" id="VideoName" value="'+Name+'"><li>'+Name+'</li><br><video id="video" width="640" height="360" controls><source src="'+Link+'" type="video/mp4"></video>';
     // tr1.innerHTML = '<video id="video" width="640" height="360" controls><source src="'+Link+'" type="video/.mp4, .mov"></video>';
 
     td0.style.display ='none';
@@ -120,11 +121,12 @@ function AddItemsToTableVideos(Name, Link){
     trow.appendChild(td1);
     
 
-    var RemoveDiv = document.createElement('td');
-    RemoveDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeVideo()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    var ActionDiv = document.createElement('td');
+    ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeVideo()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditVideoModal" onclick="FillVidboxes('+VideosNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
 
-    trow.appendChild(RemoveDiv).style.textAlign = 'center';
+    trow.appendChild(ActionDiv).style.textAlign = 'center';
     tbody.appendChild(trow);
     // tbody.appendChild(tr1);
     
@@ -181,15 +183,131 @@ function AddItemsToTableAR(Name, Link){
     trow.appendChild(td2);
     
 
-    var RemoveDiv = document.createElement('td');
-    RemoveDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeAR()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    var ActionDiv = document.createElement('td');
+    ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeAR()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
+    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditARModal" onclick="FillARboxes('+ARNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
-
-    trow.appendChild(RemoveDiv).style.textAlign = 'center';
+    trow.appendChild(ActionDiv).style.textAlign = 'center';
     tbody.appendChild(trow);
     
 
 }
+
+//-------Update Note Model from Database---------//
+var ModNoteFileName = document.getElementById('NoteNameMod');
+var BtnModUpd = document.getElementById('UpdNoteBtn');
+
+function FillNoteboxes(index){
+    if(index==null){
+        ModNoteFileName.value = "";
+        
+    }
+    else{
+        --index;
+        ModNoteFileName.value = LectureNotesList[index][0];
+        BtnModUpd.style.display='inline-block';
+
+    }
+}
+
+function updateNotes(){
+    var CourseCode = document.getElementById('key');
+    var Name = document.getElementById('fileName');
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).update(
+        {
+            Name: ModNoteFileName.value,
+            
+        },
+        (error) =>{
+            if(error){
+                alert(Name.value + " was not updated. Error occurred");
+            }
+            else{
+                alert( Name.value + " successfully updated");
+                SelectAllLectureNotes();
+                $("staticBackdrop").modal('hide');
+            }
+        }
+    )
+}
+
+
+//-------Update Video Model from Database---------//
+var ModVidFileName = document.getElementById('VidNameMod');
+var BtnModUpd = document.getElementById('UpdVidBtn');
+
+function FillVidboxes(index){
+    if(index==null){
+        ModVidFileName.value = "";
+        
+    }
+    else{
+        --index;
+        ModVidFileName.value = VideoList[index][0];
+        BtnModUpd.style.display='inline-block';
+
+    }
+}
+
+function updateVid(){
+    var CourseCode = document.getElementById('key');
+    var Name = document.getElementById('VideoName');
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).update(
+        {
+            Name: ModVidFileName.value,
+            
+        },
+        (error) =>{
+            if(error){
+                alert(Name.value + " was not updated. Error occurred");
+            }
+            else{
+                alert( Name.value + " successfully updated");
+                SelectAllVideos();
+                $("staticBackdrop").modal('hide');
+            }
+        }
+    )
+}
+
+//-------Update AR Model from Database---------//
+var ModARFileName = document.getElementById('ARNameMod');
+var BtnModUpd = document.getElementById('UpdARBtn');
+
+function FillARboxes(index){
+    if(index==null){
+        ModARFileName.value = "";
+        
+    }
+    else{
+        --index;
+        ModARFileName.value = ARList[index][0];
+        BtnModUpd.style.display='inline-block';
+
+    }
+}
+
+function updateAR(){
+    var CourseCode = document.getElementById('key');
+    var Name = document.getElementById('ARName');
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).update(
+        {
+            Name: ModARFileName.value,
+            
+        },
+        (error) =>{
+            if(error){
+                alert(Name.value + " was not updated. Error occurred");
+            }
+            else{
+                alert( Name.value + " successfully updated");
+                SelectAllAR();
+                $("staticBackdrop").modal('hide');
+            }
+        }
+    )
+}
+
 
  //-------Delete Lecture Notes from Database and Storage---------//
  function removeFile(){
@@ -200,7 +318,7 @@ function AddItemsToTableAR(Name, Link){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Notes/' + ModCourseCode.value + '/' +  Name.value);
+    const storageRef = firebase.storage().ref('Notes/' + CourseCode.value + '/' +  Name.value);
     storageRef.delete().then(()=>{
         alert("File " + Name.value + " successfully deleted");
         
@@ -220,7 +338,7 @@ function removeVideo(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Video/' + ModCourseCode.value + '/' +  Name.value);
+    const storageRef = firebase.storage().ref('Video/' + CourseCode.value + '/' +  Name.value);
     storageRef.delete().then(()=>{
         alert("Video " + Name.value + " successfully deleted");
         
@@ -240,7 +358,7 @@ function removeAR(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('AssetBundle/' + ModCourseCode.value + '/' + Name.value);
+    const storageRef = firebase.storage().ref('AssetBundle/' + CourseCode.value + '/' + Name.value);
     storageRef.delete().then(()=>{
         alert("AR Model " + Name.value + " successfully deleted");
         
@@ -250,5 +368,3 @@ function removeAR(){
     
     SelectAllAR();
 }
-
-  
