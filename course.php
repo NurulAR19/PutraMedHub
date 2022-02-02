@@ -99,11 +99,6 @@ if(isset($_GET['id']))
                             <div class="card mb-5">
                             <div class="card-body">
                                 <div class="form-group">
-                                <ul>
-                                    <!-- <li>
-                                    <model-viewer src="model/anatomyofhuman.gltf" camera-controls auto-rotate ar ></model-viewer>
-                                    </li> -->
-                                </ul>
                                 <table class="table table-sm table-borderless">
                                 <thead class="table-light" style="display: none;">
                                     <!-- <th>No.</th> -->
