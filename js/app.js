@@ -279,7 +279,7 @@
             var ARName = document.getElementById('ar_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('AssetBundle/'+ ModCourseCode.value +'/'+ file.name);
+            var storageRef = firebase.storage().ref('AssetBundle/'+ ModCourseCode.value +'/'+ ARName);
 
             // Upload file
             var task = storageRef.put(file);
