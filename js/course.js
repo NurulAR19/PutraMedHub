@@ -200,11 +200,10 @@ function AddItemsToTableAR(Name, Link){
     var Name = document.getElementById('fileName');
 
     //Remove form firebase database
-    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).remove();
-
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).remove().then(()=>{
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Notes/' + Name.value);
-    storageRef.delete().then(()=>{
+    //const storageRef = firebase.storage().ref('Notes/' + Name.value);
+    //storageRef.delete()
         alert(Name.value + " successfully deleted");
         
     }).catch((error) =>{
@@ -220,11 +219,11 @@ function removeVideo(){
     var Name = document.getElementById('VideoName');
 
     //Remove form firebase database
-    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).remove();
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).remove().then(()=>{
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Video/' + Name.value);
-    storageRef.delete().then(()=>{
+    //const storageRef = firebase.storage().ref('Video/' + Name.value);
+    //storageRef.delete()
         alert(Name.value + " successfully deleted");
         
     }).catch((error) =>{
