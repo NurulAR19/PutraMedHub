@@ -64,7 +64,7 @@ function AddItemsToTableLectureNotes(Name, Link){
     
     var ActionDiv = document.createElement('td');
     ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeFile()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
-    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillNoteboxes('+LectureNotesNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+//     ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillNoteboxes('+LectureNotesNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
 
     trow.appendChild(ActionDiv).style.textAlign = 'center';
@@ -123,7 +123,7 @@ function AddItemsToTableVideos(Name, Link){
 
     var ActionDiv = document.createElement('td');
     ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeVideo()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
-    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillVidboxes('+VideosNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+//     ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillVidboxes('+VideosNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
 
     trow.appendChild(ActionDiv).style.textAlign = 'center';
@@ -185,7 +185,7 @@ function AddItemsToTableAR(Name, Link){
 
     var ActionDiv = document.createElement('td');
     ActionDiv.innerHTML = '<button type="button" class="btn float-end" onclick="removeAR()" title="Delete file"><i class="fa fa-trash" aria-hidden="true"></i></button>'
-    ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillARboxes('+ARNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+//     ActionDiv.innerHTML+= '<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#EditNoteModal" onclick="FillARboxes('+ARNo+')" title="Update file"><i class="fa fa-edit" aria-hidden="true"></i></button>'
 
     trow.appendChild(ActionDiv).style.textAlign = 'center';
     tbody.appendChild(trow);
