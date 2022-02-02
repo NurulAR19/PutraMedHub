@@ -163,7 +163,7 @@
             var FileName = document.getElementById('file_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('Notes/'+ ModCourseCode.value + '/' + FileName);
+            var storageRef = firebase.storage().ref('Notes/'+ ModCourseCode.value + '/' + file.name);
 
             // Upload file
             var task = storageRef.put(file);
@@ -221,7 +221,7 @@
             var VidName = document.getElementById('vid_name').value;
 
             //Create a storage ref
-            var storageRef = firebase.storage().ref('Video/' + ModCourseCode.value +'/'+ VidName);
+            var storageRef = firebase.storage().ref('Video/' + ModCourseCode.value +'/'+ file.name);
 
             // Upload file
             var task = storageRef.put(file);
