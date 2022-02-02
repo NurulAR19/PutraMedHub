@@ -240,16 +240,13 @@ function removeAR(){
     var Name = document.getElementById('ARName');
 
     //Remove form firebase database
-    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove();
-
+    firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove().then(()=>{
+      alert("AR Model " + Name.value + " successfully deleted");
+      }).catch((error) =>{
+              alert("AR Model " + Name.value + "  not successfully deleted");
+      });
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('AssetBundle/' + Name.value);
-    storageRef.delete().then(()=>{
-        alert("AR Model " + Name.value + " successfully deleted");
-        
-    }).catch((error) =>{
-        alert("AR Model " + Name.value + "  not successfully deleted");
-    });
-    
+     //const storageRef = firebase.storage().ref('AssetBundle/' + Name.value);
+     //storageRef.delete()
     SelectAllAR();
 }
