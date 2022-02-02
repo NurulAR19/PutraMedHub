@@ -205,10 +205,10 @@ function AddItemsToTableAR(Name, Link){
     //Remove from firebase storage
     const storageRef = firebase.storage().ref('Notes/' + Name.value);
     storageRef.delete().then(()=>{
-        alert("File " + Name.value + " successfully deleted");
+        alert(Name.value + " successfully deleted");
         
     }).catch((error) =>{
-        alert("File " + Name.value + "  not successfully deleted");
+        alert(Name.value + "  not successfully deleted");
     });
     
     SelectAllLectureNotes();
@@ -225,10 +225,10 @@ function removeVideo(){
     //Remove from firebase storage
     const storageRef = firebase.storage().ref('Video/' + Name.value);
     storageRef.delete().then(()=>{
-        alert("Video " + Name.value + " successfully deleted");
+        alert(Name.value + " successfully deleted");
         
     }).catch((error) =>{
-        alert("Video " + Name.value + "  not successfully deleted");
+        alert(Name.value + "  not successfully deleted");
     });
     
     SelectAllVideos();
@@ -241,9 +241,9 @@ function removeAR(){
 
     //Remove form firebase database
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove().then(()=>{
-      alert("AR Model " + Name.value + " successfully deleted");
+      alert(Name.value + " successfully deleted");
       }).catch((error) =>{
-              alert("AR Model " + Name.value + "  not successfully deleted");
+              alert(Name.value + "  not successfully deleted");
       });
     //Remove from firebase storage
      //const storageRef = firebase.storage().ref('AssetBundle/' + Name.value);
