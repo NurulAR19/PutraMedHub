@@ -158,7 +158,7 @@
   sample1Button.addEventListener('click', function () {
     modelPlayer.clearScene(scene)
     modelPlayer.resetCamera(scene)
-    modelPlayer.loadObject(scene, './assets/kidney.obj', './assets/kidney.mtl', function () {
+    modelPlayer.loadObject(scene, './assets/kidney.obj','./assets/kidney.mtl', function () {
       nameElement.innerHTML = 'Intestine'
       loadingElement.innerHTML = ''
     })
