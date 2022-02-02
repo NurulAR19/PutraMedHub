@@ -96,7 +96,7 @@
     </div>
 
     <div class="center">
-<!--       <button class="button" id="sample-1-button">
+	<button class="button" id="sample-1-button">
        Lung
       </button> -->
       <button class="button" id="sample-2-button">
@@ -135,8 +135,8 @@
     loadingElement.innerHTML = progress + '%'
   })
 
-  modelPlayer.loadObject(scene, './assets/kidney.obj','./assets/kidney.mtl', function () {
-    nameElement.innerHTML = 'Intestine'
+  modelPlayer.loadObject(scene, './assets/sample_03.obj','./assets/sample_03.mtl', function () {
+    nameElement.innerHTML = 'Sample'
     loadingElement.innerHTML = ''
   })
 
@@ -145,15 +145,15 @@
     modelPlayer.goFullScreen(viewerElement)
   })
 
-//   var sample1Button = document.getElementById('sample-1-button')
-//   sample1Button.addEventListener('click', function () {
-//     modelPlayer.clearScene(scene)
-//     modelPlayer.resetCamera(scene)
-//     modelPlayer.loadObject(scene, './assets/lung.obj','./assets/lung.mtl', function () {
-//       nameElement.innerHTML = 'Lung'
-//       loadingElement.innerHTML = ''
-//     })
-//   })
+  var sample1Button = document.getElementById('sample-1-button')
+  sample1Button.addEventListener('click', function () {
+    modelPlayer.clearScene(scene)
+    modelPlayer.resetCamera(scene)
+    modelPlayer.loadObject(scene, './assets/sample_02.obj','./assets/sample_02.mtl', function () {
+      nameElement.innerHTML = 'Sample'
+      loadingElement.innerHTML = ''
+    })
+  })
 
   var sample2Button = document.getElementById('sample-2-button')
   sample2Button.addEventListener('click', function () {
