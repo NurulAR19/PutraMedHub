@@ -128,7 +128,7 @@ include('includes/navbar-2.php');
                     <div class="form-group mb-3">
                         <p><u>Augmented Reality Model</u></p>
                         <input type="text" placeholder="File name" id="ar_name" class="form-control mb-2"/>
-                        <input type="file" value="upload" id="fileButton3"  accept=".fbx, .obj, .glb, .gltf" class="form-control" onsubmit="fileURL()"/>
+                        <input type="file" value="upload" id="fileButton3"  accept=".fbx, .obj, .glb, .gltf, .zip, .rar" class="form-control" onsubmit="fileURL()"/>
                         <label id="UpProgress3" style="color: green;"></label>
                         <progress value="0"  max="100" id="uploader3" style="width:100%; height: 20px; display: none"></progress>
                     </div>
