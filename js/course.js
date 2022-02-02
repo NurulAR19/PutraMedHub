@@ -194,8 +194,6 @@ function AddItemsToTableAR(Name, Link){
 }
 
 
-
-
  //-------Delete Lecture Notes from Database and Storage---------//
  function removeFile(){
     var CourseCode = document.getElementById('key');
@@ -205,7 +203,7 @@ function AddItemsToTableAR(Name, Link){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Notes/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Notes/' + CourseCode.value + '/' +  Name.value);
+    const storageRef = firebase.storage().ref('Notes/' + Name.value);
     storageRef.delete().then(()=>{
         alert("File " + Name.value + " successfully deleted");
         
@@ -225,7 +223,7 @@ function removeVideo(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'Video/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('Video/' + CourseCode.value + '/' +  Name.value);
+    const storageRef = firebase.storage().ref('Video/' + Name.value);
     storageRef.delete().then(()=>{
         alert("Video " + Name.value + " successfully deleted");
         
@@ -245,7 +243,7 @@ function removeAR(){
     firebase.database().ref('Course/'+ CourseCode.value + '/' + 'AssetBundle/' + Name.value).remove();
 
     //Remove from firebase storage
-    const storageRef = firebase.storage().ref('AssetBundle/' + CourseCode.value + '/' + Name.value);
+    const storageRef = firebase.storage().ref('AssetBundle/' + Name.value);
     storageRef.delete().then(()=>{
         alert("AR Model " + Name.value + " successfully deleted");
         
