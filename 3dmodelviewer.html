@@ -100,13 +100,13 @@
 
     <div class="center">
       <button class="button" id="sample-1-button">
-        Sample 1
+        Intestine
       </button>
       <button class="button" id="sample-2-button">
-        Sample 2
+        Lung 
       </button>
       <button class="button" id="sample-3-button">
-        Sample 3
+        Animal Cell
       </button>
     </div>
 
@@ -138,8 +138,8 @@
     loadingElement.innerHTML = progress + '%'
   })
 
-  modelPlayer.loadObject(scene, './assets/sample.obj', null, function () {
-    nameElement.innerHTML = 'Sample 01'
+  modelPlayer.loadObject(scene, './assets/kidney.obj', './assets/kidney.obj', function () {
+    nameElement.innerHTML = 'Intestine'
     loadingElement.innerHTML = ''
   })
 
@@ -152,8 +152,8 @@
   sample1Button.addEventListener('click', function () {
     modelPlayer.clearScene(scene)
     modelPlayer.resetCamera(scene)
-    modelPlayer.loadObject(scene, './assets/sample.obj', null, function () {
-      nameElement.innerHTML = 'Sample 01'
+    modelPlayer.loadObject(scene, './assets/kidney.obj', './assets/kidney.obj', function () {
+      nameElement.innerHTML = 'Intestine'
       loadingElement.innerHTML = ''
     })
   })
@@ -167,7 +167,7 @@
       './assets/lung.obj', 
       './assets/lung.mtl',
       function () {
-        nameElement.innerHTML = 'Sample 02'
+        nameElement.innerHTML = 'Lung'
         loadingElement.innerHTML = ''
     })
   })
@@ -178,8 +178,8 @@
     modelPlayer.resetCamera(scene)
     modelPlayer.loadObject(
       scene, 
-      './assets/sample_03.obj',
-      './assets/sample_03.mtl',
+      './assets/animalCellCOLOR.obj',
+      './assets/animalCellCOLOR.mtl',
       function () {
         nameElement.innerHTML = 'Sample 03'
         loadingElement.innerHTML = ''
